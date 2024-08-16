@@ -1,0 +1,7 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+5C:64:8E:6F:8D:C2, 2024-08-11 14:37:39, 2024-08-11 14:40:15,  3, 270, WPA2, CCMP, PSK, -74,     1340,       85,   0.  0.  0.  0,  10, Zyxel_8DC1, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+70:3E:97:9A:7C:0E, 2024-08-11 14:38:37, 2024-08-11 14:40:14, -75,      115, 5C:64:8E:6F:8D:C2,Zyxel_8DC1
+
