@@ -1,0 +1,52 @@
+{
+    "name": "Personal Cloud PC",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    
+    "features": {
+        // 1. The Graphical Desktop Environment (accessed via browser)
+        "ghcr.io/devcontainers/features/desktop-lite:1": {
+            "version": "1.6.0",
+            "webPort": "6080"
+        },
+        // 2. Google Chrome for web browsing within the desktop
+        "ghcr.io/devcontainers/features/google-chrome:1": {},
+        // 3. Docker-in-Docker so you can run other containers/apps
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {
+            "version": "latest"
+        },
+        // 4. Common utilities for a better terminal experience
+        "ghcr.io/devcontainers/features/common-utils:1": {
+            "configureZshAsDefaultShell": true,
+            "upgradePackages": true
+        }
+    },
+
+    // Automatically runs your setup script when the container is created
+    // Replace 'setup.sh' with your actual filename if it's different
+    "postCreateCommand": "chmod +x ./setup.sh && ./setup.sh",
+
+    // Configures the environment to feel like a local machine
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-ceintl.vscode-language-pack-tr", // Optional: Turkish language pack
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            }
+        }
+    },
+
+    // Forwards the Desktop port so you can view it in your browser
+    "forwardPorts": [6080],
+    "portsAttributes": {
+        "6080": {
+            "label": "Desktop View",
+            "onAutoForward": "openBrowser"
+        }
+    },
+
+    "remoteUser": "codespace"
+}
